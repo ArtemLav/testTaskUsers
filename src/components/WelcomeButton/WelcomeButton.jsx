@@ -5,7 +5,7 @@ export const WelcomeButton = ({ handleClick }) => (
   <button
     type="button"
     onClick={handleClick}
-    className="btn"
+    className="btn btn-primary d-block mx-auto"
   >
     Get Started
   </button>

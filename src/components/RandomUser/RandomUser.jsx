@@ -8,17 +8,18 @@ export const RandomUser = ({ users }) => {
   useEffect(() => {
     const interval = setInterval(() => {
       setRandomUser(users[Math.floor(Math.random() * users.length)]);
-    }, 100000);
+    }, 8000);
 
     return () => clearInterval(interval);
   }, []);
 
   return (
-    <div>
-      <h2>
+    <>
+      <h4 className="text-center text-secondary">Random User:</h4>
+      <h2 className="text-center text-primary">
         {`${randomUser.name} ${randomUser.surname}`}
       </h2>
-    </div>
+    </>
   );
 };
 

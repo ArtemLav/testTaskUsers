@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import classNames from 'classnames';
 
 export const Pagination = ({
   total,
@@ -11,35 +12,52 @@ export const Pagination = ({
   const pagesNumbers = Array.from({ length: pagesCount }, (_, i) => i + 1);
 
   return (
-    <div className="pagination">
-      <button
-        type="button"
-        className="pagination__button"
-        onClick={() => setCurrentPage(currentPage - 1)}
-        disabled={currentPage === 1}
+    <ul className="pagination justify-content-center mt-5">
+      <li
+        className={classNames('page-item', {
+          disabled: currentPage === 1,
+        })}
       >
-        Previous
-      </button>
+        <button
+          onClick={() => setCurrentPage(currentPage - 1)}
+          type="button"
+          className="page-link"
+        >
+          Previous
+        </button>
+      </li>
 
       {pagesNumbers.map(number => (
-        <button
-          type="button"
-          className="pagination__button"
-          onClick={() => setCurrentPage(number)}
+        <li
+          key={number}
+          className={classNames('page-item', {
+            active: currentPage === number,
+          })}
         >
-          {number}
-        </button>
+          <button
+            onClick={() => setCurrentPage(number)}
+            type="button"
+            className="page-link"
+          >
+            {number}
+          </button>
+        </li>
       ))}
 
-      <button
-        type="button"
-        className="pagination__button"
-        onClick={() => setCurrentPage(currentPage + 1)}
-        disabled={currentPage === pagesCount}
+      <li
+        className={classNames('page-item', {
+          disabled: currentPage === pagesCount,
+        })}
       >
-        Next
-      </button>
-    </div>
+        <button
+          onClick={() => setCurrentPage(currentPage + 1)}
+          type="button"
+          className="page-link"
+        >
+          Next
+        </button>
+      </li>
+    </ul>
   );
 };
 

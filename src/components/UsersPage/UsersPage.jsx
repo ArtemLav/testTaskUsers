@@ -9,7 +9,7 @@ import { Pagination } from '../Pagination/Pagination';
 import { UsersList } from '../UsersList/UsersList';
 import { RandomUser } from '../RandomUser/RandomUser';
 
-const UsersPage = ({ users, setUsers }) => {
+export const UsersPage = ({ users, setUsers }) => {
   const getUsers = async() => {
     setUsers(await getUsersFromApi());
   };
@@ -22,6 +22,10 @@ const UsersPage = ({ users, setUsers }) => {
         <WelcomeButton handleClick={getUsers} />
       ) : (
         <>
+          <h1 className="text-center">Test Task Users</h1>
+
+          <RandomUser users={users} />
+
           <UsersList
             users={users}
             currentPage={currentPage}
@@ -34,8 +38,6 @@ const UsersPage = ({ users, setUsers }) => {
             setCurrentPage={setCurrentPage}
             perPage={5}
           />
-
-          <RandomUser users={users} />
         </>
       )}
     </div>
@@ -50,5 +52,3 @@ UsersPage.propTypes = {
 UsersPage.defaultProps = {
   users: [],
 };
-
-export default UsersPage;

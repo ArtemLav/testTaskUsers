@@ -1,9 +1,8 @@
 import React from 'react';
-import './App.scss';
 import UsersPage from './components/UsersPage/index';
 
 export const App = () => (
-  <div className="App">
+  <div className="App pt-3 px-3">
     <UsersPage />
   </div>
 );

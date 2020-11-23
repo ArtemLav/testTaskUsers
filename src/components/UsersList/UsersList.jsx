@@ -10,9 +10,9 @@ export const UsersList = ({ users, currentPage, perPage }) => {
   const currentUsers = users.slice(start, end);
 
   return (
-    <div>
+    <div className="d-flex justify-content-center">
       {currentUsers.map(user => (
-        <UserCard user={user} />
+        <UserCard user={user} key={user.id} />
       ))}
     </div>
   );

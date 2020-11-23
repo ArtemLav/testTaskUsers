@@ -2,9 +2,13 @@ import React from 'react';
 import { UserShape } from '../../shapes/UserShape';
 
 export const UserCard = ({ user }) => (
-  <section>
-    <h2>{`${user.name} ${user.surname}`}</h2>
-    <p>{user.desc}</p>
+  <section className="card m-3">
+    <div className="card-header text-center">
+      <h2 className="card-title">{`${user.name} ${user.surname}`}</h2>
+    </div>
+    <div className="card-body">
+      <p className="card-text text-center">{user.desc}</p>
+    </div>
   </section>
 );
 
