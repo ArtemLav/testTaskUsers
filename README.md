@@ -4,7 +4,7 @@ You can check out working DEMO [here](https://artemlav.github.io/testTaskUsers/)
 
 ## Description
 
-For imitating server request I used https://jsonbin.io/\
+For imitating server request I used https://jsonbin.io/ \
 All data about users stored in redux store\
 At the top of page once in 8 seconds random user name is shown\
 For styles I used Bootstrap library
